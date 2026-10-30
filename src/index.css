@@ -1,0 +1,256 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --theme-bg: #030008;
+    --theme-card: #0c0517;
+    --theme-card-hover: #160a29;
+    --theme-card-subtle: #120721;
+    --theme-border: #23123d;
+    --theme-border-highlight: #4a2182;
+    --theme-text: #f5f3ff;
+    --theme-text-muted: #a78bfa;
+    --theme-accent: #a855f7;
+    --theme-accent-hover: #9333ea;
+    --theme-accent-glow: rgba(168, 85, 247, 0.45);
+    --theme-accent-secondary: #06b6d4;
+    --theme-badge-bg: rgba(168, 85, 247, 0.18);
+    --theme-badge-text: #e9d5ff;
+    --theme-font: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  /* 1. ANGEL MODE (Radiant divine light mode) */
+  [data-theme="angel"] {
+    --theme-bg: #f8fafc;
+    --theme-card: #ffffff;
+    --theme-card-hover: #f1f5f9;
+    --theme-card-subtle: #f8fafc;
+    --theme-border: #e2e8f0;
+    --theme-border-highlight: #cbd5e1;
+    --theme-text: #0f172a;
+    --theme-text-muted: #64748b;
+    --theme-accent: #d97706; /* Divine halo gold */
+    --theme-accent-hover: #b45309;
+    --theme-accent-glow: rgba(245, 158, 11, 0.35);
+    --theme-accent-secondary: #3b82f6;
+    --theme-badge-bg: #fef3c7;
+    --theme-badge-text: #92400e;
+    --theme-font: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  /* 2. BLACK HOLE MODE (Deep cosmic void, event horizon singularity) */
+  [data-theme="black-hole"] {
+    --theme-bg: #030008;
+    --theme-card: #0b0314;
+    --theme-card-hover: #150627;
+    --theme-card-subtle: #0f051c;
+    --theme-border: #220b38;
+    --theme-border-highlight: #4c1d95;
+    --theme-text: #faf5ff;
+    --theme-text-muted: #a855f7;
+    --theme-accent: #a855f7;
+    --theme-accent-hover: #9333ea;
+    --theme-accent-glow: rgba(168, 85, 247, 0.55);
+    --theme-accent-secondary: #22d3ee;
+    --theme-badge-bg: rgba(168, 85, 247, 0.2);
+    --theme-badge-text: #f3e8ff;
+    --theme-font: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* 3. DRAGON MODES */
+  /* 3A. Fire Dragon (Magma & Molten Embers) */
+  [data-theme="dragon-fire"] {
+    --theme-bg: #0d0402;
+    --theme-card: #180803;
+    --theme-card-hover: #260d05;
+    --theme-card-subtle: #1f0b04;
+    --theme-border: #4d1708;
+    --theme-border-highlight: #7c2d12;
+    --theme-text: #fff7ed;
+    --theme-text-muted: #fb923c;
+    --theme-accent: #ff4500; /* Molten flame */
+    --theme-accent-hover: #ea580c;
+    --theme-accent-glow: rgba(255, 69, 0, 0.5);
+    --theme-accent-secondary: #eab308;
+    --theme-badge-bg: rgba(255, 69, 0, 0.2);
+    --theme-badge-text: #fed7aa;
+    --theme-font: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  /* 3B. Frost/Glacial Dragon (Permafrost & Diamond Dust) */
+  [data-theme="dragon-frost"] {
+    --theme-bg: #020b14;
+    --theme-card: #061726;
+    --theme-card-hover: #0c263d;
+    --theme-card-subtle: #091e32;
+    --theme-border: #0e3b5e;
+    --theme-border-highlight: #0284c7;
+    --theme-text: #f0f9ff;
+    --theme-text-muted: #7dd3fc;
+    --theme-accent: #0284c7;
+    --theme-accent-hover: #0369a1;
+    --theme-accent-glow: rgba(56, 189, 248, 0.45);
+    --theme-accent-secondary: #38bdf8;
+    --theme-badge-bg: rgba(14, 165, 233, 0.2);
+    --theme-badge-text: #bae6fd;
+    --theme-font: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* 3C. Shadow/Void Dragon (Obsidian Scales & Eldritch Venom) */
+  [data-theme="dragon-void"] {
+    --theme-bg: #06020c;
+    --theme-card: #0f061d;
+    --theme-card-hover: #1b0c33;
+    --theme-card-subtle: #140926;
+    --theme-border: #29124a;
+    --theme-border-highlight: #6b21a8;
+    --theme-text: #faf5ff;
+    --theme-text-muted: #34d399; /* Venom emerald */
+    --theme-accent: #10b981;
+    --theme-accent-hover: #059669;
+    --theme-accent-glow: rgba(16, 185, 129, 0.45);
+    --theme-accent-secondary: #c084fc;
+    --theme-badge-bg: rgba(16, 185, 129, 0.18);
+    --theme-badge-text: #a7f3d0;
+    --theme-font: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* 3D. Storm/Thunder Dragon (Plasma bolts & Electric Blue) */
+  [data-theme="dragon-storm"] {
+    --theme-bg: #050614;
+    --theme-card: #0b0d26;
+    --theme-card-hover: #13173d;
+    --theme-card-subtle: #0f1230;
+    --theme-border: #1a2254;
+    --theme-border-highlight: #3b82f6;
+    --theme-text: #f8fafc;
+    --theme-text-muted: #93c5fd;
+    --theme-accent: #eab308; /* Lightning gold */
+    --theme-accent-hover: #ca8a04;
+    --theme-accent-glow: rgba(234, 179, 8, 0.45);
+    --theme-accent-secondary: #06b6d4;
+    --theme-badge-bg: rgba(234, 179, 8, 0.18);
+    --theme-badge-text: #fef08a;
+    --theme-font: 'Space Grotesk', sans-serif;
+  }
+
+  /* 4. HISTORICAL MODES */
+  /* 4A. Victorian & Renaissance Parchment (Aged Sepia Manuscript) */
+  [data-theme="historical-parchment"] {
+    --theme-bg: #f5eedc;
+    --theme-card: #eae1cb;
+    --theme-card-hover: #dfd4bb;
+    --theme-card-subtle: #ede4d1;
+    --theme-border: #c8b998;
+    --theme-border-highlight: #854d0e;
+    --theme-text: #291a0c;
+    --theme-text-muted: #6b4c2b;
+    --theme-accent: #854d0e; /* Sepia wax seal */
+    --theme-accent-hover: #713f12;
+    --theme-accent-glow: rgba(133, 77, 14, 0.3);
+    --theme-accent-secondary: #991b1b;
+    --theme-badge-bg: #dfd2b5;
+    --theme-badge-text: #451a03;
+    --theme-font: 'Cinzel', serif;
+  }
+
+  /* 4B. Edo Dynasty Japan (Washi Paper & Vermilion Lacquer) */
+  [data-theme="historical-edo"] {
+    --theme-bg: #f6f3eb;
+    --theme-card: #ece6d8;
+    --theme-card-hover: #e0d8c5;
+    --theme-card-subtle: #eee8dc;
+    --theme-border: #cfc5b0;
+    --theme-border-highlight: #dc2626;
+    --theme-text: #1c1917;
+    --theme-text-muted: #78716c;
+    --theme-accent: #dc2626; /* Torii Vermilion */
+    --theme-accent-hover: #b91c1c;
+    --theme-accent-glow: rgba(220, 38, 38, 0.35);
+    --theme-accent-secondary: #0f766e;
+    --theme-badge-bg: #fecaca;
+    --theme-badge-text: #991b1b;
+    --theme-font: 'Zen Old Mincho', serif;
+  }
+
+  /* 4C. Greco-Roman Classical (Pentelic Marble & Imperial Tyrian) */
+  [data-theme="historical-rome"] {
+    --theme-bg: #f9f8f6;
+    --theme-card: #ffffff;
+    --theme-card-hover: #f1f0ec;
+    --theme-card-subtle: #f5f4ef;
+    --theme-border: #ddd8ce;
+    --theme-border-highlight: #6b21a8;
+    --theme-text: #1a1615;
+    --theme-text-muted: #71695f;
+    --theme-accent: #6b21a8; /* Imperial Tyrian Purple */
+    --theme-accent-hover: #581c87;
+    --theme-accent-glow: rgba(107, 33, 168, 0.35);
+    --theme-accent-secondary: #b45309; /* Laurel Bronze */
+    --theme-badge-bg: #f3e8ff;
+    --theme-badge-text: #581c87;
+    --theme-font: 'Cinzel', serif;
+  }
+
+  /* 4D. Steampunk Industrial Victorian (Aged Brass & Gaslight Amber) */
+  [data-theme="historical-steampunk"] {
+    --theme-bg: #14110e;
+    --theme-card: #1f1b16;
+    --theme-card-hover: #2d261e;
+    --theme-card-subtle: #241f19;
+    --theme-border: #4d3e2b;
+    --theme-border-highlight: #d97706;
+    --theme-text: #fef3c7;
+    --theme-text-muted: #d97706;
+    --theme-accent: #d97706; /* Polished Brass */
+    --theme-accent-hover: #b45309;
+    --theme-accent-glow: rgba(217, 119, 6, 0.45);
+    --theme-accent-secondary: #0d9488; /* Verdigris Copper */
+    --theme-badge-bg: rgba(217, 119, 6, 0.2);
+    --theme-badge-text: #fde68a;
+    --theme-font: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  font-family: var(--theme-font);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars matching current theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--theme-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-border-highlight);
+}
+
+/* Glow effects for active theme elements */
+.theme-glow {
+  box-shadow: 0 0 20px var(--theme-accent-glow);
+}
+
+.theme-glow-sm {
+  box-shadow: 0 0 10px var(--theme-accent-glow);
+}
+
+.theme-card-glass {
+  background: var(--theme-card);
+  border: 1px solid var(--theme-border);
+  backdrop-filter: blur(12px);
+}

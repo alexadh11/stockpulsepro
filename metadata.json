@@ -1,0 +1,6 @@
+{
+  "name": "StockPulse Pro - Adobe Stock Contributor Trending & SEO Suite",
+  "description": "Adobe Stock contributor platform with real-time trending demand gaps, AI photo vs illustration decider, algorithmic 10-keyword SEO generator, and buyer geo analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
